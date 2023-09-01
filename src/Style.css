@@ -1,0 +1,8 @@
+body{
+    background: linear-gradient(rgb(166, 166, 242), rgb(243, 161, 161), white);
+    background-repeat: no-repeat;
+}
+
+#dispcenter{
+    text-align: center;
+}
