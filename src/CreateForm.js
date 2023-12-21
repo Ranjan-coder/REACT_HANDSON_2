@@ -47,25 +47,26 @@ class Form extends Component{
             <>
             <form>
             <h1>EMPLOYEE FEEDBACK FORM</h1>
-            <label htmlFor="name">Name : </label>
-            <input type="text" id="name" name="name" value={this.state.name} onChange={this.handleChange} autoComplete="off" required /><br/>
-            <label htmlFor="dept">Department : </label>
-            <input type="text" id="dept" name="department" value={this.state.department} onChange={this.handleChange} autoComplete="off" /><br/>
-            <label htmlFor="rating">Rating : </label>
-            <input type="number" id="rating" name="rating" value={this.state.rating} onChange={this.handleChange} autoComplete="off" /><br/>
+            <label htmlFor="name" className="boldtext">Name : </label>
+            <input type="text" id="name" name="name" className="input" value={this.state.name} onChange={this.handleChange} autoComplete="off" required /><br/>
+            <label htmlFor="dept" className="boldtext">Department : </label>
+            <input type="text" id="dept" name="department" className="input" value={this.state.department} onChange={this.handleChange} autoComplete="off" /><br/>
+            <label htmlFor="rating" className="boldtext">Rating : </label>
+            <input type="number" id="rating" name="rating" className="input" value={this.state.rating} onChange={this.handleChange} autoComplete="off" /><br/>
             <button onClick={this.handleSubmit}>Submit</button>
             </form>
 
 
-            <div>
+            <div id="data">
             {this.state.stuData.map((item,index)=>{
                 console.log(item);
                 return(
-                    <div key = {index}>
+                    <div key = {index} >
                         {/* <p>index: {index}</p> */}
-                        <h1>{item.name}</h1>
-                        <h1>{item.department}</h1>
-                        <h1>{item.rating}</h1>
+                        <span>{item.name}</span><span> | | </span>
+                        <span>{item.department}</span><span> | | </span>
+                        <span>{item.rating}</span>
+                        <span> , </span>
                     </div>
                 )
             })}
